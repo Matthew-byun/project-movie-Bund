@@ -2,6 +2,7 @@ import React from "react";
 import '../index.css'
 
 const SearchArea = (props) => {
+  console.log(props)
   return (
     <div className="container">
       <div className="row">

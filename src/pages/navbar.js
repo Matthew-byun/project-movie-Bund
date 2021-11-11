@@ -20,8 +20,11 @@ class Navbar extends Component {
               </a>
 
               <a href="/" className="brand-logo">
-                Project
+                <i className="material-icons pt-1" style={{fontSize:'3rem'}}>hd</i>
+                <span className='h1'>Project</span>
+
               </a>
+              
               <a
                 href="#"
                 className="sidenav-trigger"
@@ -30,19 +33,21 @@ class Navbar extends Component {
               <ul className="right hide-on-med-and-down">
                 
                 <li>
-                  <Link to="/trending">Trending</Link>
+                  <Link to="/trending">
+                    <span className='h5'>Trending</span>
+                    </Link>
                 </li>
                 <li> 
-                  <Link to="/popular">Popular</Link>
+                  <Link to="/popular"><span className='h5'>Popular</span></Link>
                 </li>
                 <li>
-                  <Link to="/toprated">Top Rated</Link>
+                  <Link to="/toprated"><span className='h5'>Top Rated</span></Link>
                 </li>
                 <li>
-                  <Link to="/upcoming">Up Coming</Link>
+                  <Link to="/upcoming"><span className='h5'>Up Coming</span></Link>
                 </li>
                 <li>
-                  <Link to="/nowplaying">Now Playing</Link>
+                  <Link to="/nowplaying"><span className='h5'>Now Playing</span></Link>
                 </li>
                 {/* <li>
                 <Link to="/signin">Sign in</Link>

@@ -1,6 +1,11 @@
 import React from "react";
 
 const Footer = () => {
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+ 
   return (
     <div>
       <footer className="page-footer teal">
@@ -12,83 +17,45 @@ const Footer = () => {
                 You can search information of any movie that you want!
               </p>
             </div>
-            <div className="col d-flex flex-row justify-content-between ">
-              <div>
-              <h5 className="white-text">Links</h5>
-
+            <div className="col d-flex flex-row justify-content-end">
+              <div className=''>
+                <h5 className="white-text">Contact Me</h5>
                 <ul>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 1
+                  <li className='valign-wrapper'>
+                    <i className="material-icons">assignment_ind</i>
+                    <a className="grey-text text-lighten-3 p-2" href="#!">
+                      Phan Nguyen Hoai Trung
                     </a>
                   </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 2
+                  <li className='valign-wrapper'>
+                    <i className="material-icons">mail</i>
+                    <a className="grey-text text-lighten-3 p-2" href="#!">
+                      castlebeex@gmail.com
                     </a>
                   </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 3
+                  <li className='valign-wrapper'>
+                    <i className="material-icons">call</i>
+                    <a className="grey-text text-lighten-3 center-align p-2" href="#!">
+                      076.3456.667
                     </a>
                   </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 4
-                    </a>
-                  </li>
+                  
+                  
+                  
                 </ul>
               </div>
-              <div>
-                <h5 className="white-text">Links</h5>
-                <ul>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 1
-                    </a>
-                  </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 2
-                    </a>
-                  </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 3
-                    </a>
-                  </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 4
-                    </a>
-                  </li>
-                </ul>
+              <div className='right-align mx-auto'>
+              <a href='/'>
+                <h5 className="white-text">Home</h5>
+              </a>
               </div>
-              <div>
-                <h5 className="white-text">Links</h5>
-                <ul>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 1
-                    </a>
-                  </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 2
-                    </a>
-                  </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 3
-                    </a>
-                  </li>
-                  <li>
-                    <a className="grey-text text-lighten-3" href="#!">
-                      Link 4
-                    </a>
-                  </li>
-                </ul>
+              <div className='right-align'>
+              
+                <i className="material-icons" onClick={topFunction}>arrow_upward</i>
+              
               </div>
+              
+      
             </div>
             
            
@@ -96,9 +63,9 @@ const Footer = () => {
         </div>
         <div className="footer-copyright">
           <div className="container">
-            © 2014 Copyright Text
-            <a className="grey-text text-lighten-4 right" href="#!">
-              More Links
+            © 2021 Copyright
+            <a className="grey-text text-lighten-4 right" href="https://www.facebook.com/getturban/">
+              Trung Phan (BunDev)
             </a>
           </div>
         </div>

@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 function TopTrendingList() {
   useEffect(() => {
     fetchItems();
+    document.documentElement.scrollTop = 200;
+
   }, []);
 
   const [items, setItems] = useState([]);
@@ -19,14 +21,16 @@ function TopTrendingList() {
     <div className="container">
       <div className="row">
         {items.map((item) => (
-          <div className="col s3" style={{ height: "65vh" }}>
+          <div className="col s3" style={{width:'30vh', height: "65vh" }}>
             <div
-              className="card card-panel hoverable"
+              className="card-panel hoverable"
               style={{ height: "58vh" }}
             >
               <div className="card-image center-align">
-                <Link to={`/trending/${item.id}`}>
+                <Link className='center' to={`/trending/${item.id}`}>
                   <img
+                    className="responsive-img"
+                   style={{width: '30vh', height: '40vh'}}
                     key={item.id}
                     src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
                     alt=""
@@ -34,7 +38,7 @@ function TopTrendingList() {
                 </Link>
               </div>
               <div className="card-content">
-                <span className="card-title truncate">{item.original_title}</span>
+                <span className="card-title truncate h1 pt-4 center">{item.original_title}</span>
                 <p className="truncate">{item.overview}</p>
               </div>
             </div>

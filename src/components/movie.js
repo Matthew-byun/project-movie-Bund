@@ -9,11 +9,11 @@ const Movie = (props) => {
     return (
         <div className='col s3' style={{width:'30vh', height: "65vh" }}>
             <div className="card-panel hoverable center"
-              style={{ height: "60vh" }}>
-                <Link className='center' to={`/search/${props.movieId}`}> 
+              style={{ height: "58vh" }}>
+                <Link className='center' to={`/${props.movieId}`}> 
                     {
-                        props.image == null ? <img src={`https://aina.vn/wp-content/uploads/2021/08/default-image-620x600-1.jpg`} alt="card image" style={{width: '26vh', height: '40vh'}} /> 
-                        : <img  src={`https://image.tmdb.org/t/p/w500${props.image}`} alt="card image" style={{width: '26vh', height: '40vh'}}/>
+                        props.image == null ? <img className='responsive-img' src={`https://aina.vn/wp-content/uploads/2021/08/default-image-620x600-1.jpg`} alt="card image" style={{width: '26vh', height: '40vh'}} /> 
+                        : <img className='responsive-img' src={`https://image.tmdb.org/t/p/w500${props.image}`} alt="card image" style={{width: '26vh', height: '40vh'}}/>
 }
                 </Link>
                 <span className='card-title'>

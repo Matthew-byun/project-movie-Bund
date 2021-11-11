@@ -2,90 +2,87 @@ import React from "react";
 import { useParams } from "react-router";
 
 const MainPage = (props) => {
-    
+  const fontStyle = {
+    fontFamily: 'Bebas Neue',
+    fontSize: '5rem'
+  }
   return (
     <div>
-      <div className={props.isHide ? `hide` : `container`}>
+      
+      <div className='container pt-4 pb-4'>
         <div className="row">
-          <div className="col s12 m4">
-            <div class="icon-block">
-              <h2 class="center brown-text">
-                <i class="material-icons">group</i>
+          <div className="col s12 m6">
+            <div className="icon-block">
+              <h2 className="center brown-text">
+                {/* <i className="material-icons">group</i> */}
               </h2>
-              <h5 class="center">User Experience Focused</h5>
+              <h1 className="center" style={fontStyle}>Search</h1>
 
-              <p class="light">
-                By utilizing elements and principles of Material Design, we were
-                able to create a framework that incorporates components and
-                animations that provide more feedback to users. Additionally, a
-                single underlying responsive system across all platforms allow
-                for a more unified user experience.
+              <p className="light center text-uppercase">
+                Search any thing you want, we will finds movies for you to watch!
               </p>
             </div>
           </div>
-          <div className="col s12 m4">
-            <div class="icon-block">
-              <h2 class="center brown-text">
-                <i class="material-icons">group</i>
+          <div className="col s12 m6">
+            <div className="icon-block">
+              <h2 className="center brown-text">
+                {/* <i className="material-icons">group</i> */}
               </h2>
-              <h5 class="center">User Experience Focused</h5>
+              <h1 className="center" style={fontStyle}>Get Information</h1>
 
-              <p class="light">
-                By utilizing elements and principles of Material Design, we were
-                able to create a framework that incorporates components and
-                animations that provide more feedback to users. Additionally, a
-                single underlying responsive system across all platforms allow
-                for a more unified user experience.
+              <p className="light center text-uppercase">
+                Get all information of the movies that you wanna know
               </p>
             </div>
           </div>
-          <div className="col s12 m4">
-            <div class="icon-block">
-              <h2 class="center brown-text">
-                <i class="material-icons">group</i>
+          <div className="col s12 m6">
+            <div className="icon-block">
+              <h2 className="center brown-text">
+                {/* <i className="material-icons">group</i> */}
               </h2>
-              <h5 class="center">User Experience Focused</h5>
+              <h1 className="center" style={fontStyle}>Watch Trailer</h1>
 
-              <p class="light">
-                By utilizing elements and principles of Material Design, we were
-                able to create a framework that incorporates components and
-                animations that provide more feedback to users. Additionally, a
-                single underlying responsive system across all platforms allow
-                for a more unified user experience.
+              <p className="light center text-uppercase">
+                You can watch all the trailer of the movies
               </p>
             </div>
           </div>
         </div>
       </div>
-
+     
       <div
         className="parallax-container valign-wrapper"
         style={{ height: "70vh" }}
       >
         <div className="card-image parallax">
-          <img src={props.urlKey} alt="" />
+          <img src={props.urlKey[0]} alt="" />
         </div>
       </div>
 
-      <div class={props.isHide ? `hide` : `container`}>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 center">
-              <h3>
-                <i class="mdi-content-send brown-text"></i>
-              </h3>
-              <h4>About Me</h4>
-              <p class="center-align light">Phan Nguyen Hoai Trung</p>
-              <p class="center-align light">076.3456.667</p>
-              <p class="center-align light">castlebeex@gmail.com</p>
-              <p class="center-align light">
-                Overview about
-                meeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-              </p>
+<div className={props.isHide ? `hide` : `container`}>
+        <div className="container center-align d-flex flex-flow align-items-center "   style={{height:'50vh'}}>
+          <div className="row">
+            <div className="col s12 ">
+             <h1 className='text-uppercase' style={fontStyle}>"Today is hard, tomorrow will be worse but the day after tomorrow will be sunshine."
+                </h1> 
+          <p className="h1 ">– Jack Ma</p>
+
             </div>
           </div>
+
+
         </div>
       </div>
+      <div
+        className="parallax-container valign-wrapper"
+        style={{ height: "70vh" }}
+      >
+        <div className="card-image parallax">
+          <img src={props.urlKey[7]} alt="" />
+        </div>
+      </div>
+
+      
     </div>
   );
 };

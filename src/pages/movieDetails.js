@@ -11,6 +11,8 @@ function MovieDetails(props) {
   const getId = useParams();
   useEffect(() => {
     fetchItem();
+    document.documentElement.scrollTop = 150;
+
   }, []);
 
   const [item, setItem] = useState({
@@ -48,7 +50,7 @@ function MovieDetails(props) {
         }
           />
           <span className="card-title">
-            <h1 className="truncate">{item.title}</h1>
+            <h1 className="truncate center">{item.title}</h1>
           </span>
         </div>
       </div>
@@ -75,11 +77,14 @@ function MovieDetails(props) {
           )}
           <div className="collection with-header">
             <div className="collection-header">
-              <h5>Release Date: {item.release_date}</h5>
+              <p className='h5 d-inline'>Title: </p> <span>{item.title}</span>
+            </div>
+            <div className="collection-header">
+              <p className='h5 d-inline'>Release Date: </p> <span>{item.release_date}</span>
             </div>
             {item.homepage ? (
               <div className="collection-header">
-                <h5>Homepage: {item.homepage}</h5>
+              <p className='h5 d-inline'>Homepage: </p> <span>{item.homepage}</span>
               </div>
             ) : (
               <div className="collection-header">
@@ -88,7 +93,7 @@ function MovieDetails(props) {
             )}
             {item.tagline ? (
               <div className="collection-header">
-                <h5>Tagline: {item.tagline}</h5>
+              <p className='h5 d-inline'>Tagline: </p> <span>{item.tagline}</span>
               </div>
             ) : (
               <div className="collection-header">
@@ -97,7 +102,7 @@ function MovieDetails(props) {
             )}
 
             <div className="collection-header">
-              <h5>Overview: {item.overview}</h5>
+              <p className='h5 d-inline'>Overview: </p> <span>{item.overview}</span>
             </div>
           </div>
 
@@ -122,7 +127,7 @@ function MovieDetails(props) {
                   </div>
                 ))
               ) : (
-                <p>Trailer is not available</p>
+                <h5 className='pt-2 pb-4 mb-4 light'>Trailer is not available</h5>
               )}
             </div>
           )}

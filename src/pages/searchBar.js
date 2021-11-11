@@ -1,7 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import SearchArea from "../components/search";
 
 class Homepage extends Component {
+  
+
+
   componentDidMount() {
     const M = window.M;
     document.addEventListener("DOMContentLoaded", function () {
@@ -9,15 +12,20 @@ class Homepage extends Component {
       M.Parallax.init(elems, {});
     });
   }
+  
+  
+
 
   render() {
-    console.log(this.props)
+    const fontStyle = {
+      fontFamily: 'Bebas Neue',
+      fontSize: '3rem'
+    }
     return (
       <div>
-        
         <div className="section white s12">
           <div className="container s12">
-            <h2 className="header center">Welcome</h2>
+            <h2 className="header center" style={fontStyle}>Welcome</h2>
             <div className='nav-wrapper center'>
             <div className="col">
             <ul className="top-bar_nav">
@@ -25,14 +33,19 @@ class Homepage extends Component {
                 <p style={{ color: "dimgray" }}>
                   Millions of movies, TV shows and people to discover.
                 </p>
-                <Link to='search'>
-                      <button type="button" class="btn btn-warning">Explore now.</button>
-                </Link>
                 
+                
+                      <button type="button" class="btn btn-warning" 
+                      onClick={this.props.toggleShow}
+                      >Explore now.</button>
+                {this.props.isShow ? <SearchArea handleSubmit={this.props.handleSubmit} handleChange={this.props.handleChange} /> : null }
+                
+                
+                  
               </li>
               
             </ul>
-          </div>
+        </div>
             </div>
           </div>
         </div>
