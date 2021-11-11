@@ -84,12 +84,7 @@ class Navbar extends Component {
           <Link to="/nowplaying">Now Playing</Link>
               
           </li>
-          {/* <li className="waves-effect" style={{display:"block"}}>
-            <Link to="/signin">Sign in</Link>
-          </li>
-          <li className="waves-effect" style={{display:"block"}}>
-            <Link to="/signup">Sign Up</Link>
-          </li> */}
+         
           
         </ul>
       

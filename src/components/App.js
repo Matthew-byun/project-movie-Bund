@@ -195,11 +195,7 @@ class App extends Component {
                     />
                   </div>
                 )}
-                  {/* <MainPage 
-                  urlKey={this.urlKey[3]}
-                  isHide={true}
-                  /> */}
-                {/* <img src={this.urlKey} /> */}
+                 
               </Route>
 
               <Route path="/trending" exact>
