@@ -3,19 +3,28 @@ import { useParams } from "react-router-dom";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
-const M = window.M;
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".tap-target");
-  M.TapTarget.init(elems, {});
-  
-});
+
+
+
+
+
 function MovieDetails(props) {
   // get id from URL
   console.log(props)
   const getId = useParams();
-  useEffect(async() => {
-    await fetchItem();
-    document.documentElement.scrollTop = 150;
+
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    fetchItem();
+    
+    setTimeout(() =>{
+      setIsLoading(false);
+    },3000)
+
+    setTimeout(() =>{
+      document.documentElement.scrollTop = 180;
+    },500)
   }, []);
 
   const [item, setItem] = useState({
@@ -30,28 +39,26 @@ function MovieDetails(props) {
 
     setItem(item);
     console.log(item);
-    
 
-    //     <div>
-    //     {item.videos.results.map(video => (
-    //           <iframe key={video.id} width="420" height="345" src={`https://www.youtube.com/embed/${video.key}`}>
-    //           </iframe>
-    //       ))}
-    // </div>}}
   };
   
   return (
     <div> 
       
-      <div className="card">
+      <div className="card" key={item.id}>
         <div className="card-image center">
-        { !item.backdrop_path ? <div className='center' style={{padding:'20vh'}}>
-            <Loader 
+    
+
+        { !item.backdrop_path ? <div className='center'>
+            
+            {isLoading==true ? <Loader 
             type="TailSpin"
             color="#00BFFF"
             height={400}
             width={400}
-            />
+            style={{padding:'20vh'}}
+            /> : 
+              <img className="responsive-img parallax" src="https://img3.goodfon.com/wallpaper/nbig/5/3e/minimalizm-smayl-smaylik-net.jpg"/>}
             </div>
             : 
           <img
@@ -60,6 +67,7 @@ function MovieDetails(props) {
             alt="backdrop"
             src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
           /> }
+            
           <span className="card-title">
             <h1 className="truncate center">{item.title}</h1>
           </span>
@@ -132,7 +140,7 @@ function MovieDetails(props) {
                       key={video.id}
                       width="853"
                       height="480"
-                      allowfullscreen
+                      allowFullScreen
                       src={`https://www.youtube.com/embed/${video.key}`}
                     ></iframe>
                   </div>

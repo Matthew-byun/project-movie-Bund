@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SearchArea from "../components/search";
 
 class Homepage extends Component {
-  
+
 
 
   componentDidMount() {
@@ -15,7 +15,7 @@ class Homepage extends Component {
   
   
 
-
+  
   render() {
     const fontStyle = {
       fontFamily: 'Bebas Neue',

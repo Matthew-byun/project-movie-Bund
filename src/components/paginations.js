@@ -6,7 +6,7 @@ const Pagination = (props) =>{
     for(let i = 1; i<= props.pages; i++){
         let active = props.currentPage === i ? '-warning' : '-primary'
         pageLinks.push(
-            <div className='center'>
+            <div className='center' key={i}>
             <li className={`m-2`} key={i} onClick={() => props.nextPage(i)}>
             <button className={`btn btn${active}`}>
                 {i}</button>
@@ -19,7 +19,7 @@ const Pagination = (props) =>{
         <div className='container'>
             <div className='row pt-2'>
                
-                    <ul className={props.pages < 24 ? `d-flex justify-content-center flex-wrap ` : `pagination d-flex justify-content-between flex-wrap`}> 
+                    <ul className={props.pages < 24 ? `d-flex justify-content-center flex-wrap ` : `pagination d-flex justify-content-around flex-wrap`}> 
                         
                          {pageLinks}
                                              

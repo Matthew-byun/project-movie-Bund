@@ -1,7 +1,6 @@
 import React from "react";
 
 const ImageUrl = (props) => {
-  console.log(props);
   
   return (
     <div className="parallax-container valign-wrapper" style={{ height: props.except ? '0' : '70vh' }}>

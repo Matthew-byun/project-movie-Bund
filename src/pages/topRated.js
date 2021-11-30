@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 function TopRated() {
   useEffect(() => {
     fetchItems();
-    document.documentElement.scrollTop = 200;
-
+    document.documentElement.scrollTop = 150;
   }, []);
 
   const [items, setItems] = useState([]);
@@ -16,6 +15,7 @@ function TopRated() {
     const items = await data.json();
     console.log(items);
     setItems(items.results);
+    
   };
 
   return (

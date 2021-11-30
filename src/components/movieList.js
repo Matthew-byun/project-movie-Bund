@@ -3,7 +3,6 @@ import Movie from "./movie";
 
 /// render ra ket qua
 const MovieList = (props) => {
-    console.log(props)
     return (
         <div className='container'>
             <div className="row">

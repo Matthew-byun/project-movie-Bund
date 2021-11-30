@@ -40,7 +40,6 @@ class App extends Component {
       currentMovie: null,
       totalPages: 1,
       firstPav: 1,
-      limit: 20,
       isShow: false
     };
     this.apiKey = process.env.REACT_APP_API;
@@ -61,17 +60,17 @@ class App extends Component {
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
-        const oldList = [...data.results];
-        localStorage.setItem("oldList", JSON.stringify(oldList));
+        // const oldList = [...data.results];
+        // localStorage.setItem("oldList", JSON.stringify(oldList));
 
-        const totalPages = data.total_pages;
-        localStorage.setItem("totalPages", totalPages);
+        // const totalPages = data.total_pages;
+        // localStorage.setItem("totalPages", totalPages);
 
         this.setState({
           movies: [...data.results],
           totalResults: data.total_results,
           totalPages: data.total_pages,
-          currentPage: 1,
+          currentPage: data.page,
           confirmSearch: this.state.Search
         });
       })
@@ -108,24 +107,23 @@ class App extends Component {
         console.log("There was an error!", JSON.stringify(error));
       });
   };
-  closeMovieInfo = () => {
-    this.setState({
-      movies: JSON.parse(localStorage.getItem("oldList")),
-      currentMovie: null,
-      // totalPages: localStorage.getItem('totalPages'),
-    });
-  };
+  // closeMovieInfo = () => {
+  //   this.setState({
+  //     movies: JSON.parse(localStorage.getItem("oldList")),
+  //     currentMovie: null,
+  //     // totalPages: localStorage.getItem('totalPages'),
+  //   });
+  // };
 
   nextPage = (pageNumber) => {
     document.documentElement.scrollTop = 900;
-
+    
     fetch(
       `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.Search}&page=${pageNumber}`
     )
       .then((data) => data.json())
       .then((data) => {
         console.log(data);
-        const totalPages = data.total_pages;
         this.setState({ movies: [...data.results], currentPage: pageNumber });
       })
       .catch((error) => {
@@ -154,8 +152,6 @@ class App extends Component {
   
 
   render() {
-    console.log(this.state.confirmSearch)
-  
     return (
       <Suspense fallback={<div>Loading ... </div>}>
         <Router>
@@ -176,7 +172,6 @@ class App extends Component {
                     {this.state.confirmSearch && this.state.totalPages == 0 && this.state.Search == this.state.confirmSearch ? <div className='center h1' style={{padding:'10vh', fontFamily:'Bebas Neue'}}>Can't find '{this.state.Search}', please try again!</div> : ''}
                     {this.state.totalPages > 1 ? (
                       <Pagination
-                        limit={this.state.limit}
                         firstPav={this.state.firstPav}
                         pages={this.state.totalPages}
                         nextPage={this.nextPage}

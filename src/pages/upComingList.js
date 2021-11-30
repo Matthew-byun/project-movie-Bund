@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function UpComingList() {
   useEffect(() => {
     fetchItems();
-    document.documentElement.scrollTop = 200;
+    document.documentElement.scrollTop = 150;
 
   }, []);
   const [items, setItems] = useState([]);
