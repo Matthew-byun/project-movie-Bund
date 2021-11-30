@@ -59,10 +59,10 @@ const MainPage = (props) => {
         </div>
       </div>
 
-<div className={props.isHide ? `hide` : `container`}>
-        <div className="container center-align d-flex flex-flow align-items-center "   style={{height:'50vh'}}>
+<div className={props.isHide ? `hide` : `container`} style={{padding:"10vh 10vh"}}>
+        <div className="center-align d-flex flex-flow align-items-center auto">
           <div className="row">
-            <div className="col s12 ">
+            <div className="col s12 m6">
              <h1 className='text-uppercase' style={fontStyle}>"Today is hard, tomorrow will be worse but the day after tomorrow will be sunshine."
                 </h1> 
           <p className="h1 ">– Jack Ma</p>
