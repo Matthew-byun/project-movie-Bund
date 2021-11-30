@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
+
 const M = window.M;
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".tap-target");
@@ -37,18 +40,24 @@ function MovieDetails(props) {
   };
 
   return (
-    <div>
+    <div> 
       <div className="card">
         <div className="card-image center">
+        { !item.backdrop_path ? <div className='center' style={{padding:'20vh'}}>
+            <Loader 
+            type="TailSpin"
+            color="#00BFFF"
+            height={400}
+            width={400}
+            />
+            </div>
+            : 
           <img
           style={{height:''}}
             className="responsive-img parallax"
             alt="backdrop"
-            
-            src={item.backdrop_path ? `https://image.tmdb.org/t/p/original${item.backdrop_path}` : 'https://wallpaperaccess.com/full/2903163.jpg'
-            
-        }
-          />
+            src={`https://image.tmdb.org/t/p/original${item.backdrop_path}`}
+          /> }
           <span className="card-title">
             <h1 className="truncate center">{item.title}</h1>
           </span>

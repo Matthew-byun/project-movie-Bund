@@ -72,6 +72,7 @@ class App extends Component {
           totalResults: data.total_results,
           totalPages: data.total_pages,
           currentPage: 1,
+          confirmSearch: this.state.Search
         });
       })
       .catch((error) => {
@@ -153,7 +154,7 @@ class App extends Component {
   
 
   render() {
-    
+    console.log(this.state.confirmSearch)
   
     return (
       <Suspense fallback={<div>Loading ... </div>}>
@@ -164,17 +165,15 @@ class App extends Component {
               
               <Route path="/" exact>
                   <ImageUrl urlKey={this.urlKey[1]}/>
-
-                  {/* <Homepage /> */}
                   <Homepage
                 handleSubmit={this.handleSubmit} handleChange={this.handleChange} toggleShow={this.toggleShow} isShow={this.state.isShow} />
-                {/* <SearchArea  handleSubmit={this.handleSubmit} handleChange={this.handleChange} /> */}
                 {this.state.currentMovie == null ? (
                   <div>
                     <MovieList
                       viewMovieInfo={this.viewMovieInfo}
                       movies={this.state.movies}
                     />
+                    {this.state.confirmSearch && this.state.totalPages == 0 && this.state.Search == this.state.confirmSearch ? <div className='center h1' style={{padding:'10vh', fontFamily:'Bebas Neue'}}>Can't find '{this.state.Search}', please try again!</div> : ''}
                     {this.state.totalPages > 1 ? (
                       <Pagination
                         limit={this.state.limit}
