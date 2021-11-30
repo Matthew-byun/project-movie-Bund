@@ -7,15 +7,15 @@ const M = window.M;
 document.addEventListener("DOMContentLoaded", function () {
   var elems = document.querySelectorAll(".tap-target");
   M.TapTarget.init(elems, {});
+  
 });
 function MovieDetails(props) {
   // get id from URL
   console.log(props)
   const getId = useParams();
-  useEffect(() => {
-    fetchItem();
+  useEffect(async() => {
+    await fetchItem();
     document.documentElement.scrollTop = 150;
-
   }, []);
 
   const [item, setItem] = useState({
@@ -30,6 +30,7 @@ function MovieDetails(props) {
 
     setItem(item);
     console.log(item);
+    
 
     //     <div>
     //     {item.videos.results.map(video => (
@@ -38,9 +39,10 @@ function MovieDetails(props) {
     //       ))}
     // </div>}}
   };
-
+  
   return (
     <div> 
+      
       <div className="card">
         <div className="card-image center">
         { !item.backdrop_path ? <div className='center' style={{padding:'20vh'}}>
