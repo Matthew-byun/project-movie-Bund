@@ -23,7 +23,7 @@ const Footer = () => {
                 <ul>
                   <li className='valign-wrapper'>
                     <i className="material-icons">assignment_ind</i>
-                    <a className="grey-text text-lighten-3 p-2" href="#!">
+                    <a className="grey-text text-lighten-3 p-2" href="https://www.facebook.com/getturban/">
                       Phan Nguyen Hoai Trung
                     </a>
                   </li>
