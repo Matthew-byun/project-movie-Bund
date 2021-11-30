@@ -33,21 +33,21 @@ class Navbar extends Component {
               <ul className="right hide-on-med-and-down">
                 
                 <li>
-                  <Link to="/trending">
+                  <a href="/trending">
                     <span className='h5'>Trending</span>
-                    </Link>
+                    </a>
                 </li>
                 <li> 
-                  <Link to="/popular"><span className='h5'>Popular</span></Link>
+                  <a href="/popular"><span className='h5'>Popular</span></a>
                 </li>
                 <li>
-                  <Link to="/toprated"><span className='h5'>Top Rated</span></Link>
+                  <a href="/toprated"><span className='h5'>Top Rated</span></a>
                 </li>
                 <li>
-                  <Link to="/upcoming"><span className='h5'>Up Coming</span></Link>
+                  <a href="/upcoming"><span className='h5'>Up Coming</span></a>
                 </li>
                 <li>
-                  <Link to="/nowplaying"><span className='h5'>Now Playing</span></Link>
+                  <a href="/nowplaying"><span className='h5'>Now Playing</span></a>
                 </li>
                 {/* <li>
                 <Link to="/signin">Sign in</Link>

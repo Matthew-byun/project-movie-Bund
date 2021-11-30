@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function TopRated() {
   useEffect(() => {
     fetchItems();
-    document.documentElement.scrollTop = 150;
+    // document.documentElement.scrollTop = 150;
   }, []);
 
   const [items, setItems] = useState([]);
@@ -32,7 +32,6 @@ function TopRated() {
                   <img
                    className="responsive-img"
                    style={{width: '30vh', height: '40vh'}}
-
                     key={item.id}
                     src={`https://image.tmdb.org/t/p/original/${item.poster_path}`}
                     alt=""

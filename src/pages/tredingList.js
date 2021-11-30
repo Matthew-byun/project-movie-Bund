@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function TopTrendingList() {
   useEffect(() => {
     fetchItems();
-    document.documentElement.scrollTop = 150;
+    // document.documentElement.scrollTop = 150;
 
   }, []);
 

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function PopularList() {
   useEffect(() => {
     fetchItems();
-    document.documentElement.scrollTop = 150;
+    // document.documentElement.scrollTop = 150;
 
   }, []);
   const [items, setItems] = useState([]);

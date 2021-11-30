@@ -38,7 +38,7 @@ class Homepage extends Component {
                       <button type="button" class="btn btn-warning" 
                       onClick={this.props.toggleShow}
                       >Explore now.</button>
-                {this.props.isShow ? <SearchArea handleSubmit={this.props.handleSubmit} handleChange={this.props.handleChange} /> : null }
+                {this.props.isShow ? <SearchArea currentSearch={this.props.currentSearch} handleSubmit={this.props.handleSubmit} handleChange={this.props.handleChange} /> : null }
                 
                 
                   

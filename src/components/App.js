@@ -92,20 +92,20 @@ class App extends Component {
     this.setState({ currentMovie: newCurrentMovie });
 
     // get recommend list
-    fetch(
-      `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${this.apiKey}&language=en-US&page=1`
-    )
-      .then((data) => data.json())
-      .then((data) => {
-        this.setState({
-          movies: [...data.results].slice(0, 20),
-          totalResults: 0,
-        });
-        console.log(data.total_pages);
-      })
-      .catch((error) => {
-        console.log("There was an error!", JSON.stringify(error));
-      });
+    // fetch(
+    //   `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${this.apiKey}&language=en-US&page=1`
+    // )
+    //   .then((data) => data.json())
+    //   .then((data) => {
+    //     this.setState({
+    //       movies: [...data.results].slice(0, 20),
+    //       totalResults: 0,
+    //     });
+    //     console.log(data.total_pages);
+    //   })
+    //   .catch((error) => {
+    //     console.log("There was an error!", JSON.stringify(error));
+    //   });
   };
   // closeMovieInfo = () => {
   //   this.setState({
@@ -136,7 +136,6 @@ class App extends Component {
   }
  
   imageURL() {
-    console.log("ok");
     return (
       <div className="parallax-container" style={{ height: "70vh" }}>
         <div className="parallax">
@@ -162,6 +161,7 @@ class App extends Component {
               <Route path="/" exact>
                   <ImageUrl urlKey={this.urlKey[1]}/>
                   <Homepage
+                  currentSearch={this.state.Search}
                 handleSubmit={this.handleSubmit} handleChange={this.handleChange} toggleShow={this.toggleShow} isShow={this.state.isShow} />
                 {this.state.currentMovie == null ? (
                   <div>
